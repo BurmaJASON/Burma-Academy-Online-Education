@@ -1,5 +1,15 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import { createRouter, createWebHashHistory  } from 'vue-router'
+import HomeView from '../pages/HomeView.vue'
+import store from '@/store';
+
+
+const ifAuth = (to,from,next) => {
+  const data = store.getters.token;
+  if(data != null && data != undefined && data != '') {
+    return next();
+  }
+  return next({ name: 'signUp' });
+}
 
 const routes = [
   {
@@ -8,17 +18,43 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/about',
+    path : '/about',
     name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    component: () => import('../pages/AboutView.vue')
+  },
+  {
+    path : '/contact',
+    name: 'contact',
+    component: () => import('../pages/ContactView.vue')
+  },
+  {
+    path : '/courses',
+    name: 'courses',
+    component: () => import('../pages/CoursesView.vue')
+  },
+  {
+    path : '/signUp',
+    name: 'signUp',
+    component: () => import('../pages/SignUpView.vue')
+  },
+  {
+    path : '/library',
+    name: 'library',
+    component: () => import('../pages/LibraryView.vue'),
+    beforeEnter : ifAuth
+  },
+  {
+    path : '/detail',
+    name : 'detail',
+    component: () => import('../pages/CourseDetail.vue')
   }
+  
+
 ]
 
 const router = createRouter({
   history: createWebHashHistory(),
+  // mode: 'history',
   routes
 })
 
