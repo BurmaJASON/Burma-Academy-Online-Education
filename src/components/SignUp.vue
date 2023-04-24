@@ -5,7 +5,7 @@
                 <div class="section-title text-center position-relative mb-4">
                     <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Start Your Journey!</h6>
                 </div>
-            </div>
+            </div>   
     </div>
         <div class="row justify-content-center bg-image mx-0 mb-5">
             <div class="col-lg-6 py-5">
