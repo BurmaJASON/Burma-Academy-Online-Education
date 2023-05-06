@@ -30,20 +30,16 @@
                     <p><i class="fa fa-phone-alt mr-2"></i>+959 703 058XX</p>
                     <p><i class="fa fa-envelope mr-2"></i>burmaacademy@edu.com</p>
                     <div class="d-flex justify-content-start mt-4">
-                        <a class="text-white mr-4" href="https://freewebsitecode.com/"><i class="fab fa-2x fa-twitter"></i></a>
-                        <a class="text-white mr-4" href="https://facebook.com/freewebsitecode/"><i class="fab fa-2x fa-facebook-f"></i></a>
-                        <a class="text-white mr-4" href="https://freewebsitecode.com/"><i class="fab fa-2x fa-linkedin-in"></i></a>
-                        <a class="text-white" href="https://youtube.com/freewebsitecode/"><i class="fab fa-2x fa-youtube"></i></a>
+                        <a class="text-white mr-4" href="https://twitter.com/SawYeHtet404" target="_blank"><i class="fab fa-2x fa-twitter"></i></a>
+                        <a class="text-white mr-4" href="https://www.facebook.com/sawye.htet.7/" target="_blank"><i class="fab fa-2x fa-facebook-f"></i></a>
+                        <a class="text-white mr-4" href="https://www.linkedin.com/in/saw-ye-htet/" target="_blank"><i class="fab fa-2x fa-linkedin-in"></i></a>
+                        <a class="text-white" href="https://github.com/burmajason" target="_blank"><i class="fab fa-2x fa-github"></i></a>
                     </div>
                 </div>
                 <div class="col-md-4 mb-5">
                     <h3 class="text-white mb-4">Our Courses</h3>
-                    <div class="d-flex flex-column justify-content-start">
-                        <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Web Design</a>
-                        <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Apps Design</a>
-                        <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Marketing</a>
-                        <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Research</a>
-                        <a class="text-white-50" href="#"><i class="fa fa-angle-right mr-2"></i>SEO</a>
+                    <div class="d-flex flex-column justify-content-start" v-for="(category , index) in categories" :key="index">
+                        <a class="text-white-50 mb-2" href="#" ><i class="fa fa-angle-right mr-2"></i>{{ category.name }}</a>
                     </div>
                 </div>
                 <div class="col-md-4 mb-5">
@@ -53,7 +49,7 @@
                         <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Terms & Condition</a>
                         <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Regular FAQs</a>
                         <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Help & Support</a>
-                        <a class="text-white-50" href="#"><i class="fa fa-angle-right mr-2"></i>Contact</a>
+                        <router-link class="text-white-50" to="/contact"><i class="fa fa-angle-right mr-2"></i>Contact</router-link>
                     </div>
                 </div>
             </div>
@@ -63,11 +59,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-center text-md-left mb-3 mb-md-0">
-                    <p class="m-0">Copyright &copy; <a class="text-white" href="https://freewebsitecode.com/">BurmaAcademy</a>. All Rights Reserved.
+                    <p class="m-0">Copyright &copy; <a class="text-white" href="https://github.com/burmajason" target="_blank">BurmaAcademy</a>. All Rights Reserved.
                     </p>
                 </div>
                 <div class="col-md-6 text-center text-md-right">
-                    <p class="m-0">Designed by <a class="text-white" href="https://freewebsitecode.com">Burma JASON</a>
+                    <p class="m-0">Designed by <a class="text-white" href="https://github.com/burmajason" target="_blank">Burma JASON</a>
                     </p>
                 </div>
             </div>
@@ -75,13 +71,36 @@
     </div>
     <!-- Footer End -->
     <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary rounded-0 btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+    <!-- <a href="#" class="btn btn-lg btn-primary rounded-0 btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a> -->
+    <router-link class="btn btn-lg btn-primary rounded-0 btn-lg-square back-to-top" :to="{ path: $route.path }" @click="scrollToTop">
+        <i class="fa fa-angle-double-up"></i>
+    </router-link>
+
   </div>
 </template>
 
 <script>
-export default {
+import axios from 'axios';
 
+export default {
+    data() {
+        return {
+            categories : []
+        }
+    },
+    methods: {
+        scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        },
+        loadCategories() {
+            axios.get('http://localhost:8000/api/courses').then((response) => {
+                this.categories = response.data.categories;
+            }).catch(err => console.log(err.message));
+        },
+    },
+    mounted() {
+        this.loadCategories();
+    }
 }
 </script>
 

@@ -84,7 +84,15 @@
                     </div>
                 </div>
                 
-                
+                <div class="d-flex justify-content-center mt-3" v-if="paginate">
+                    <v-pagination
+                        v-model="page"
+                        :pages="pageCount"
+                        :range-size="1"
+                        active-color="rgb(191, 217, 255)"
+                        @update:modelValue="getAllCourses"
+                    />
+                </div>
             </div>
         </div>
         <!-- Courses End -->

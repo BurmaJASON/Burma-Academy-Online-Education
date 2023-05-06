@@ -33,7 +33,7 @@ export default {
             
             axios.get("http://localhost:8000/api/courses").then((response) => {
                 // getting Filter course
-                const filteredCourse = response.data.courses.find(course => course.slug === this.courseSlug);
+                const filteredCourse = response.data.allCourses.find(course => course.slug === this.courseSlug);
                 if (filteredCourse) {
                     if(filteredCourse.image != null) {
                     filteredCourse.image = 'http://localhost:8000/storage/courseImage/' + filteredCourse.image;
@@ -68,7 +68,7 @@ export default {
         getLatestCourses() {
             axios.get("http://localhost:8000/api/courses").then((response) => {
                 // Getting Latest 4 courses
-                const latestCourse = response.data.courses.slice(0,4);
+                const latestCourse = response.data.allCourses.slice(0,4);
                 latestCourse.forEach((Lcourse) => {
                     if(Lcourse.image != null) {
                         Lcourse.image = 'http://localhost:8000/storage/courseImage/' + Lcourse.image;

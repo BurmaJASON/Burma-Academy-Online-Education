@@ -13,7 +13,7 @@
                         <img class="img-fluid rounded w-100 mb-4" :src="course.image" alt="Image">
                         <h6>{{ course.intro }}</h6>
                         <hr>
-                        <p>{{ course.body }}</p>
+                        <p v-html="course.body"></p>
                     </div>
 
                     <!-- Comment Form -->

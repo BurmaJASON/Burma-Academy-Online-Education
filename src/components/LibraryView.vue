@@ -55,5 +55,11 @@
 <script src="../composables/library"></script>
 
 <style>
+    a:hover{
+        cursor: pointer;
+    }
+    img:hover {
+    cursor: crosshair;
+    }
 
 </style>
