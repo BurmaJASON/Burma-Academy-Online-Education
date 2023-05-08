@@ -72,37 +72,16 @@
     <!-- Footer End -->
     <!-- Back to Top -->
     <!-- <a href="#" class="btn btn-lg btn-primary rounded-0 btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a> -->
-    <router-link class="btn btn-lg btn-primary rounded-0 btn-lg-square back-to-top" :to="{ path: $route.path }" @click="scrollToTop">
-        <i class="fa fa-angle-double-up"></i>
-    </router-link>
+    <div v-if="showBackToTop">
+        <router-link  class="btn btn-lg btn-primary rounded-0 btn-lg-square back-to-top" :to="{ path: $route.path }" @click="scrollToTop">
+            <i class="fa fa-angle-double-up"></i>
+        </router-link>
+    </div>
 
   </div>
 </template>
 
-<script>
-import axios from 'axios';
-
-export default {
-    data() {
-        return {
-            categories : []
-        }
-    },
-    methods: {
-        scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        },
-        loadCategories() {
-            axios.get('http://localhost:8000/api/courses').then((response) => {
-                this.categories = response.data.categories;
-            }).catch(err => console.log(err.message));
-        },
-    },
-    mounted() {
-        this.loadCategories();
-    }
-}
-</script>
+<script src="../composables/footer"></script>
 
 <style>
 

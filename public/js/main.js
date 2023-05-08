@@ -26,7 +26,7 @@
         } else {
             $('.back-to-top').fadeOut('slow');
         }
-    });
+    });    
 
 })(jQuery);
 
