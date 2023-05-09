@@ -39,7 +39,7 @@
                 <div class="col-md-4 mb-5">
                     <h3 class="text-white mb-4">Our Courses</h3>
                     <div class="d-flex flex-column justify-content-start" v-for="(category , index) in categories" :key="index">
-                        <a class="text-white-50 mb-2" href="#" ><i class="fa fa-angle-right mr-2"></i>{{ category.name }}</a>
+                        <router-link class="text-white-50 mb-2" to="/courses" ><i class="fa fa-angle-right mr-2"></i>{{ category.name }}</router-link>
                     </div>
                 </div>
                 <div class="col-md-4 mb-5">

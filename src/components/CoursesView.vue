@@ -84,7 +84,7 @@
                     </div>
                 </div>
                 
-                <div class="d-flex justify-content-center mt-3" v-if="paginate">
+                <div class="d-flex justify-content-center mt-3" v-if="paginate && coursesList.length != 0">
                     <v-pagination
                         v-model="page"
                         :pages="pageCount"
