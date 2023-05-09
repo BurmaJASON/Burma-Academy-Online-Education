@@ -5,6 +5,7 @@ Laravel + Vuejs
 Dashboard Panels
 
 This repository contains two dashboard panels: the admin dashboard and the user dashboard.
+
 Important Note
 
 Please carefully read the README.md file in each branch before using or contributing to the dashboard panel.
