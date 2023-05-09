@@ -98,8 +98,9 @@
                         </div>
                     </div>
 
+                    <!-- All Subjects -->
                     <div class="mb-5">
-                        <h2 class="mb-3">Categories</h2>
+                        <h2 class="mb-3">Subjects</h2>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item d-flex justify-content-between align-items-center px-0" v-for="(category , index) in categories" :key="index">
                                 <span href="" class="text-decoration-none h6 m-0">{{ category.data.name }}</span>
@@ -109,6 +110,7 @@
                         </ul>
                     </div>
 
+                    <!-- Recent Courses -->
                     <div class="mb-5">
                         <h2 class="mb-4">Recent Courses</h2>
                         <div  v-for="(Lcourse , index) in latestCourses" :key="index">

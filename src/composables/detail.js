@@ -25,6 +25,7 @@ export default {
     },  
 
     methods: {
+        
         formatDateTime(dateTime) {
             return moment(dateTime).fromNow();
         },
@@ -82,9 +83,7 @@ export default {
 
         loadCategories() {
             axios.get('http://localhost:8000/api/courses').then((response) => {
-                // this.categories = response.data.categories;
-
-                    const courses = response.data.courses;
+                    const courses = response.data.allCourses;
                     const categories = response.data.categories;
                     const categoryCounts = {};
 
@@ -102,6 +101,7 @@ export default {
                         data: category,
                         count: categoryCounts[category.id]
                     }));
+                    console.log(this.categories);
 
             }).catch(err => console.log(err.message));
         },
