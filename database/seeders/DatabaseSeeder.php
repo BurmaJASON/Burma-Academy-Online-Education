@@ -35,7 +35,7 @@ class DatabaseSeeder extends Seeder
 
         // Admin who create courses
         $jack = User::factory()->create(['name' => 'Jack', 'user_name' => 'Jackey','email' => 'jack@gmail.com', 'role' => 'admin']);
-        $alex = User::factory()->create(['name' => 'Alex', 'user_name' => 'Alex','email' => 'alex@gmail.com', 'role' => 'admin']);
+        $erica = User::factory()->create(['name' => 'Erica', 'user_name' => 'Erica','email' => 'erica@gmail.com', 'role' => 'admin']);
         $jason = User::factory()->create(['name' => 'Jason', 'user_name' => 'Burma Jason', 'email' => 'burmajason@gmail.com', 'role' => 'admin']);
 
 
@@ -43,10 +43,10 @@ class DatabaseSeeder extends Seeder
         Course::factory(2)->create(['category_id' => $dataScience->id, 'user_id' => $jack->id]);
         Course::factory(4)->create(['category_id' => $dataScience->id, 'user_id' => $jason->id]);
 
-        Course::factory(5)->create(['category_id' => $business->id, 'user_id' => $alex->id]);
+        Course::factory(5)->create(['category_id' => $business->id, 'user_id' => $erica->id]);
         Course::factory(3)->create(['category_id' => $business->id, 'user_id' => $jack->id]);
 
-        Course::factory(1)->create(['category_id' => $computeScience->id, 'user_id' => $alex->id]);
+        Course::factory(1)->create(['category_id' => $computeScience->id, 'user_id' => $erica->id]);
         Course::factory(1)->create(['category_id' => $computeScience->id, 'user_id' => $jack->id]);
         Course::factory(1)->create(['category_id' => $computeScience->id, 'user_id' => $jason->id]);
 
@@ -54,7 +54,7 @@ class DatabaseSeeder extends Seeder
 
         Course::factory(2)->create(['category_id' => $informationTec->id, 'user_id' => $jason->id]);
 
-        Course::factory(1)->create(['category_id' => $health->id, 'user_id' => $alex->id]);
+        Course::factory(1)->create(['category_id' => $health->id, 'user_id' => $erica->id]);
 
         Course::factory(1)->create(['category_id' => $socialScience->id, 'user_id' => $jack->id]);
         Course::factory(2)->create(['category_id' => $socialScience->id, 'user_id' => $jason->id]);
@@ -62,7 +62,7 @@ class DatabaseSeeder extends Seeder
         Course::factory(1)->create(['category_id' => $arts->id, 'user_id' => $jason->id]);
 
         Course::factory(1)->create(['category_id' => $language->id, 'user_id' => $jack->id]);
-        Course::factory(1)->create(['category_id' => $language->id, 'user_id' => $alex->id]);
+        Course::factory(1)->create(['category_id' => $language->id, 'user_id' => $erica->id]);
 
 
 

@@ -2,7 +2,7 @@
     <a href="" class="btn btn-primary ms-4" onclick="history.back()">Back</a>
     <div class="card col-6 offset-3 my-5">
         @if ($course->image == null)
-            <img src="{{ asset('storage/courseImage/default.jpeg') }}" class="card-img-top " alt="">
+            <img src="{{ asset('assets/imgs/default.jpeg') }}" class="card-img-top " alt="">
         @else
             <img src="{{ asset('storage/courseImage/'.$course->image) }}" class="card-img-top " alt="">
         @endif
