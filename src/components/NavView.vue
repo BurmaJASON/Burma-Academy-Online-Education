@@ -12,16 +12,16 @@
             </div>
             <div class="col-lg-6 text-center text-lg-right">
                 <div class="d-inline-flex align-items-center">
-                    <a class="text-white px-2" href="">
+                    <a class="text-white px-2" href="https://www.facebook.com/sawye.htet.7/" target="_blank">
                         <i class="fa-brands fa-facebook"></i>
                     </a>
-                    <a class="text-white px-2" href="">
+                    <a class="text-white px-2" href="https://twitter.com/SawYeHtet404" target="_blank">
                         <i class="fab fa-twitter"></i>
                     </a>
-                    <a class="text-white px-2" href="">
+                    <a class="text-white px-2" href="https://www.linkedin.com/in/saw-ye-htet/" target="_blank">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
-                    <a class="text-white px-2" href="">
+                    <a class="text-white px-2" href="https://www.instagram.com/sw_y_htt_4.4/" target="_blank">
                         <i class="fab fa-instagram"></i>
                     </a>
                     <a class="text-white pl-2" href="">
